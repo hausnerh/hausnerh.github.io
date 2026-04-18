@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 280 280" width="280" height="280" role="img" aria-label="Headshot placeholder — replace with your photo">
+  <defs>
+    <linearGradient id="bg" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0%" stop-color="#efe9dc"/>
+      <stop offset="100%" stop-color="#e5dccb"/>
+    </linearGradient>
+    <linearGradient id="figure" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0%" stop-color="#b8a88c"/>
+      <stop offset="100%" stop-color="#7a6b54"/>
+    </linearGradient>
+  </defs>
+  <rect width="280" height="280" fill="url(#bg)"/>
+  <!-- Head -->
+  <circle cx="140" cy="112" r="46" fill="url(#figure)"/>
+  <!-- Shoulders / torso -->
+  <path d="M52 280 C 64 210, 100 180, 140 180 C 180 180, 216 210, 228 280 Z" fill="url(#figure)"/>
+  <!-- Subtle caption -->
+  <text x="140" y="268" text-anchor="middle" font-family="Lato, Arial, sans-serif" font-size="10" fill="#7a746a" letter-spacing="1.5">
+    REPLACE WITH PHOTO
+  </text>
+</svg>

@@ -1,0 +1,179 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Harry Hausner &middot; Neutrino Experimentalist</title>
+  <meta name="description" content="Harry Hausner is a postdoctoral researcher at Fermilab working on the ICARUS and SBN short-baseline neutrino experiments. Doctoral work at UW&ndash;Madison on sterile neutrino searches with NOvA." />
+  <meta name="author" content="Harry Hausner" />
+
+  <!-- Open Graph -->
+  <meta property="og:type" content="profile" />
+  <meta property="og:title" content="Harry Hausner &middot; Neutrino Experimentalist" />
+  <meta property="og:description" content="Postdoctoral researcher at Fermilab working on ICARUS and the Short-Baseline Neutrino Program." />
+
+  <!-- Fonts: Vollkorn (serif), Lato (sans), Fira Code (mono, ligatures + cv14) -->
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link
+    href="https://fonts.googleapis.com/css2?family=Fira+Code:wght@400;500;600&family=Lato:ital,wght@0,300;0,400;0,700;1,400&family=Vollkorn:ital,wght@0,400;0,500;0,600;0,700;1,400;1,600&display=swap"
+    rel="stylesheet"
+  />
+
+  <link rel="stylesheet" href="styles.css" />
+  <link rel="icon" type="image/svg+xml" href="assets/favicon.svg" />
+</head>
+
+<body>
+  <a class="skip-link" href="#main">Skip to main content</a>
+
+  <main id="main" class="page">
+    <!-- ============================================================
+         Left column: identity, bio, research interests, contact
+         ============================================================ -->
+    <section class="identity" aria-labelledby="name">
+      <figure class="headshot">
+        <img
+          src="assets/headshot.jpeg"
+          alt="Portrait of Harry Hausner"
+          width="280"
+          height="280"
+        />
+      </figure>
+
+      <header class="identity-header">
+        <h1 id="name">Harry Hausner</h1>
+        <p class="title">Postdoctoral Research Associate</p>
+        <p class="affiliation">Fermi National Accelerator Laboratory</p>
+      </header>
+
+      <section class="bio" aria-labelledby="bio-heading">
+        <h2 id="bio-heading" class="section-heading">About</h2>
+        <p>
+          I am a neutrino experimentalist interested in
+          <em>4&#8209;flavor oscillation physics</em> and physics beyond the Standard
+          Model with accelerator neutrinos. I am currently a postdoctoral researcher at
+          Fermilab, where I work on <strong>ICARUS</strong>; contributing to the singlen&#8209;detector
+          muon&#8209;neutrino disappearance search and helping prepare the for multi&#8209;detector
+          <strong>Short&#8209;Baseline Neutrino</strong> program's future measurement,
+          hoping to put definitive limits on oscillations at the eV<sup>2</sup>&#8209;scale mass&#8209;squared
+          splitting.
+        </p>
+        <p>
+          I received my PhD from the University of Wisconsin&ndash;Madison in
+          Brian&nbsp;Rebel's group, where I implemented a covariance&#8209;matrix fitting
+          technique for sterile&#8209;neutrino searches at <strong>NOvA</strong>. Outside
+          of analysis, I care about building community in neutrino
+          physics&mdash;as a SULI mentor, and through <em>SBN&nbsp;Young</em>,
+          a grassroots group of early-career researchers in the SBN program.
+        </p>
+      </section>
+
+      <section class="interests" aria-labelledby="interests-heading">
+        <h2 id="interests-heading" class="section-heading">Research interests</h2>
+        <ul class="tag-list">
+          <li>Sterile neutrino searches</li>
+          <li>Short-baseline oscillation physics</li>
+          <li>Liquid argon TPCs</li>
+          <li>Detector systematics</li>
+          <li>ML reconstruction</li>
+          <li>Data acquisition &amp; operations</li>
+        </ul>
+      </section>
+
+      <section class="contact" aria-labelledby="contact-heading">
+        <h2 id="contact-heading" class="section-heading">Contact</h2>
+        <dl class="contact-list">
+          <div class="contact-row">
+            <dt>Email</dt>
+            <dd><a href="mailto:hausner.physics@pm.me"><code>hausner.physics@pm.me</code></a></dd>
+          </div>
+          <div class="contact-row">
+            <dt>ORCID</dt>
+            <dd>
+              <a href="https://orcid.org/0000-0001-8893-2280" rel="noopener">
+                <code>0000-0001-8893-2280</code>
+              </a>
+            </dd>
+          </div>
+          <div class="contact-row">
+            <dt>InspireHEP</dt>
+            <dd>
+              <a href="https://inspirehep.net/authors/1896968" rel="noopener">
+                <code>authors/1896968</code>
+              </a>
+            </dd>
+          </div>
+        </dl>
+      </section>
+    </section>
+
+    <!-- ============================================================
+         Right column: rotating publications pulled live from
+         the InspireHEP REST API.
+         ============================================================ -->
+    <section class="publications" aria-labelledby="pubs-heading" aria-live="polite">
+      <header class="publications-header">
+        <h2 id="pubs-heading" class="section-heading">Selected publications</h2>
+        <p class="publications-sub">
+          Live from
+          <a href="https://inspirehep.net/authors/1896968" rel="noopener">InspireHEP</a>
+          &middot; auto-cycling every 10&#8239;s
+        </p>
+      </header>
+
+      <div
+        class="carousel"
+        id="pub-carousel"
+        role="region"
+        aria-roledescription="carousel"
+        aria-label="Publications"
+      >
+        <!-- Cards are injected here by script.js -->
+        <article class="pub-card is-loading" aria-busy="true">
+          <p class="pub-loading">Loading publications from InspireHEP&hellip;</p>
+        </article>
+      </div>
+
+      <div class="carousel-controls">
+        <button
+          type="button"
+          class="carousel-btn"
+          id="pub-prev"
+          aria-label="Previous publication"
+          aria-controls="pub-carousel"
+        >&larr; Prev</button>
+
+        <button
+          type="button"
+          class="carousel-btn carousel-btn--toggle"
+          id="pub-toggle"
+          aria-label="Pause auto-cycle"
+          aria-pressed="false"
+          aria-controls="pub-carousel"
+        >Pause</button>
+
+        <button
+          type="button"
+          class="carousel-btn"
+          id="pub-next"
+          aria-label="Next publication"
+          aria-controls="pub-carousel"
+        >Next &rarr;</button>
+      </div>
+
+      <ol class="pub-dots" id="pub-dots" aria-label="Publication indicators"></ol>
+    </section>
+  </main>
+
+  <footer class="page-footer">
+    <p>
+      &copy; <span id="year"></span> Harry Hausner &middot; Built with
+      <code>&lt;html&gt;</code> and a healthy respect for neutrinos.
+    </p>
+  </footer>
+
+  <script>document.getElementById("year").textContent = new Date().getFullYear();</script>
+  <script src="script.js" defer></script>
+</body>
+</html>
