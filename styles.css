@@ -221,8 +221,13 @@ code, .mono {
   display: flex;
   flex-direction: column;
   gap: 1.1rem;
-  position: sticky;
-  top: 3rem;
+}
+
+/* Sub-sections moved under the carousel get extra breathing room
+   so they sit apart from the dot indicators above them. */
+.publications > .interests,
+.publications > .contact {
+  margin-top: 1.25rem;
 }
 
 .publications-header { margin-bottom: 0.25rem; }
