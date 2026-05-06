@@ -191,9 +191,9 @@ code, .mono {
 .contact-list {
   margin: 0;
   padding: 0;
-  display: flex;
-  flex-direction: column;
-  gap: 0.4rem;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 0.4rem 2rem;
 }
 .contact-row {
   display: grid;
@@ -460,6 +460,7 @@ code, .mono {
   .pub-card { inset: 1.5rem 1.35rem; }
   .pub-title { font-size: 1.2rem; }
   .contact-row { grid-template-columns: 6ch 1fr; gap: 0.5rem; }
+  .contact-list { grid-template-columns: 1fr; gap: 0.4rem; }
   .headshot { width: 160px; height: 160px; }
 }
 
