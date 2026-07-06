@@ -33,7 +33,6 @@
     "imprints",
     "collaborations",
     "document_type",
-    "references",
   ].join(",");
 
   const API = (
@@ -121,10 +120,8 @@
       docType = m.document_type[0].replace(/_/g, " ");
     }
 
-    const citations = (m.references && m.references.length) || null; // proxy
-
     return {
-      title, authorLine, journal, year, arxiv, doi, recid, inspireUrl, docType, citations
+      title, authorLine, journal, year, arxiv, doi, recid, inspireUrl, docType
     };
   }
 
