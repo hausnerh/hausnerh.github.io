@@ -155,6 +155,12 @@ code, .mono {
   color: var(--ink-muted);
   margin: 0.1rem 0 0;
 }
+.cv {
+  font-family: var(--sans);
+  font-size: 0.95rem;
+  color: var(--ink-muted);
+  margin: 0.1rem 0 0;
+}
 
 .bio p {
   margin: 0 0 0.9rem;
