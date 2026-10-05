@@ -3,20 +3,20 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>Harry Hausner — Curriculum Vitae</title>
-<meta name="description" content="Curriculum vitae of Harry Hausner — postdoctoral researcher at Fermilab on ICARUS and the Short-Baseline Neutrino program. Sterile-neutrino searches, liquid argon TPCs, detector systematics, and machine-learning reconstruction. PhD, University of Wisconsin–Madison (NOvA).">
+<meta name="description" content="Curriculum vitae of Harry Hausner — postdoctoral researcher at Fermilab on ICARUS, the Short-Baseline Neutrino program, and DUNE NDLAr. Sterile-neutrino searches, liquid argon TPCs, detector systematics, and machine-learning applications in physics. PhD, University of Wisconsin–Madison (NOvA).">
 <meta name="author" content="Harry Hausner">
 <link rel="canonical" href="https://hausnerh.github.io/cv.html">
 <link rel="icon" type="image/svg+xml" href="assets/favicon.svg">
 <meta property="og:type" content="profile">
 <meta property="og:title" content="Harry Hausner — Curriculum Vitae">
-<meta property="og:description" content="Postdoc at Fermilab on ICARUS and the Short-Baseline Neutrino program. Sterile-neutrino searches, liquid argon TPCs, 4-flavor oscillations.">
+<meta property="og:description" content="Postdoc at Fermilab on ICARUS, the Short-Baseline Neutrino program, and DUNE NDLAr. Sterile-neutrino searches, liquid argon TPCs, 4-flavor oscillations.">
 <meta property="og:url" content="https://hausnerh.github.io/cv.html">
 <meta property="og:image" content="https://hausnerh.github.io/assets/headshot.jpeg">
 <meta property="profile:first_name" content="Harry">
 <meta property="profile:last_name" content="Hausner">
 <meta name="twitter:card" content="summary_large_image">
 <meta name="twitter:title" content="Harry Hausner — Curriculum Vitae">
-<meta name="twitter:description" content="Postdoc at Fermilab on ICARUS and the Short-Baseline Neutrino program.">
+<meta name="twitter:description" content="Postdoc at Fermilab on ICARUS, the Short-Baseline Neutrino program, and DUNE NDLAr.">
 <meta name="twitter:image" content="https://hausnerh.github.io/assets/headshot.jpeg">
 <script type="application/ld+json">
 {"@context":"https://schema.org","@type":"Person","name":"Harry Hausner","givenName":"Harry","familyName":"Hausner","jobTitle":"Postdoctoral Research Associate","description":"Neutrino experimentalist working on ICARUS and the Short-Baseline Neutrino program at Fermilab.","url":"https://hausnerh.github.io/","mainEntityOfPage":"https://hausnerh.github.io/cv.html","image":"https://hausnerh.github.io/assets/headshot.jpeg","email":"mailto:hausner.physics@pm.me","telephone":"+1-630-840-8602","affiliation":{"@type":"Organization","name":"Fermi National Accelerator Laboratory","url":"https://www.fnal.gov/"},"alumniOf":{"@type":"CollegeOrUniversity","name":"University of Wisconsin–Madison"},"sameAs":["https://orcid.org/0000-0001-8893-2280","https://inspirehep.net/authors/1896968","https://scholar.google.com/citations?user=Uv0cyvIAAAAJ","https://www.linkedin.com/in/hausner-physics/"]}
@@ -216,6 +216,11 @@ ul.bul>li::marker{color:var(--accent);}
 .badge{flex:none;width:48px;text-align:center;font-family:'Vollkorn SC',serif;font-size:10px;font-weight:600;color:var(--accent);border:1px solid color-mix(in srgb, var(--accent) 30%, white);border-radius:5px;padding:1px 0;background:color-mix(in srgb, var(--accent) 8%, white);}
 .talk-text{font-size:12px;line-height:1.4;}
 .talk-link{color:var(--accent);text-decoration:none;border-bottom:1px solid color-mix(in srgb, var(--accent) 35%, white);}
+.pub-list{list-style:none;margin:0;padding:0;font-size:11.5px;line-height:1.35;}
+.pub-list>li{display:flex;justify-content:space-between;align-items:baseline;gap:10px;padding:3px 0;border-top:1px solid color-mix(in srgb, var(--accent) 10%, white);break-inside:avoid;}
+.pub-list>li:first-child{border-top:none;padding-top:0;}
+.pub-list .pub-journal{color:var(--muted);white-space:nowrap;}
+.pub-note{font-size:11px;color:var(--muted);margin:0 0 6px;}
 .hlink{color:inherit;text-decoration:none;border-bottom:1px solid color-mix(in srgb, var(--accent) 38%, white);}
 @page{size:letter;margin:0.55in;}
 @media print{
@@ -227,9 +232,24 @@ ul.bul>li::marker{color:var(--accent);}
  .run-header{box-sizing:border-box;height:0.4in;display:flex;justify-content:space-between;align-items:flex-end;padding-bottom:4px;margin-bottom:8px;border-bottom:1.5px solid color-mix(in srgb, var(--accent) 38%, white);font-family:'Vollkorn SC',serif;}
  .run-header .rh-name{font-weight:700;font-size:12px;letter-spacing:.05em;color:var(--ink);}
  .run-header .rh-title{font-size:10px;letter-spacing:.16em;color:var(--accent);}
- main.doc section{-webkit-box-decoration-break:clone;box-decoration-break:clone;}
  main.doc section>div:first-child{break-after:avoid;}
  main.doc section div.row{break-after:avoid;}
+ /* Firefox ignores break-after:avoid, so "keep with next" is done with an
+    invisible spacer hanging below an unbreakable header: if the spacer would
+    cross the page edge, the header moves to the next page with its content. */
+ ul.bul>li{break-inside:avoid;}
+ .card-head,.row,.org{break-inside:avoid;}
+ .card-head::after{content:"";display:block;height:110px;margin-bottom:-110px;}
+ .row{display:block;line-height:18px;}
+ .row>.date{float:right;line-height:18px;margin-left:10px;}
+ .row::after{content:"";display:block;clear:both;height:44px;margin-bottom:-44px;}
+ .org::after{content:"";display:block;height:24px;margin-bottom:-24px;}
+ /* Outline the card on head + body rather than the section, so a section
+    fragment left behind when its header moves on draws nothing. */
+ section.card{border:0;}
+ .card-head{border:1px solid color-mix(in srgb, var(--accent) 22%, white);border-bottom:0;border-radius:14px 14px 0 0;}
+ .card-body{border:1px solid color-mix(in srgb, var(--accent) 22%, white);border-top-color:color-mix(in srgb, var(--accent) 16%, white);border-radius:0 0 14px 14px;-webkit-box-decoration-break:clone;box-decoration-break:clone;}
+ .card-col>.card-body{flex:1;}
 }
 </style>
 
@@ -262,7 +282,7 @@ ul.bul>li::marker{color:var(--accent);}
     <span class="card-title">About Me</span>
   </div>
   <div class="card-body" style="font-size:12.5px;line-height:1.55;">
-    <p style="margin:0;">I am Harry, a neutrino experimentalist interested in exploring 4-flavor oscillation physics and physics beyond the standard model with accelerator neutrinos. I received my PhD from the University of Wisconsin–Madison where I worked in Brian Rebel's group, implementing a covariance matrix fitting technique for use in searches for sterile neutrinos at NOvA. Upon completion of my doctoral program I joined Fermilab as a postdoctoral researcher under Angela Fava. Here I have brought my experience with systematics to help push the ICARUS single-detector muon neutrino disappearance search and prepare for the SBN multi-detector search. This joint analysis will make a definitive measurement of oscillations due to eV²-scale mass-squared splitting.</p>
+    <p style="margin:0;">I am Harry, a neutrino experimentalist interested in exploring 4-flavor oscillation physics and physics beyond the standard model with accelerator neutrinos. I received my PhD from the University of Wisconsin–Madison where I worked in Brian Rebel's group, implementing a covariance matrix fitting technique for use in searches for sterile neutrinos at NOvA. Upon completion of my doctoral program I joined Fermilab as a postdoctoral researcher under Angela Fava. Here I have brought my experience with systematics to help push the ICARUS single-detector muon neutrino disappearance search and prepare for the SBN multi-detector search. This joint analysis will make a definitive measurement of oscillations due to eV²-scale mass-squared splitting. I also work as part of the DUNE Collaboration on NDLAr data/MC validation to ensure the successful physics program of DUNE.</p>
     <p style="margin:9px 0 0;">In addition to my research, I find it important to foster community within neutrino physics, especially as it relates to helping younger physicists find their footing. I take great pride in having served multiple times as a SULI mentor, guiding undergraduate students in a research project, and have been actively involved in SBN Young, a grassroots organization of graduate students and other young researchers within the SBN Program where we can support and help one another. There is no physics without the physics community, and each of us has a role to play in helping each other achieve the best science possible.</p>
   </div>
 </section>
@@ -347,6 +367,8 @@ ul.bul>li::marker{color:var(--accent);}
       </div>
       <ul class="bul">
         <li>Leading investigations into data/MC discrepencies in ND-LAr dector modeling</li>
+        <li>Understanding LArPix front-end electronics in data and MC</li>
+        <li>Coordinating efforts for new data to be taken with FSDCube at LBNL to test our simulation</li>
       </ul>
     </div>
 
@@ -421,6 +443,14 @@ ul.bul>li::marker{color:var(--accent);}
     <span class="card-title">Selected Talks &amp; Publications</span>
   </div>
   <div class="card-body" style="display:flex;flex-direction:column;gap:8px;">
+    <div style="display:flex;gap:9px;align-items:baseline;break-inside:avoid;">
+      <span class="badge">Talk</span>
+      <span class="talk-text">Invited Talk on ICARUS Results, APS Global Physics Summit — Scheduled for April, 2027</span>
+    </div>
+    <div style="display:flex;gap:9px;align-items:baseline;break-inside:avoid;">
+      <span class="badge">Talk</span>
+      <span class="talk-text"><em>“Lossless TPC Hardware Compression at ICARUS,”</em> Coordinating Panel for Advanced Detectors — October 21, 2026</span>
+    </div>
     <div style="display:flex;gap:9px;align-items:baseline;break-inside:avoid;">
       <span class="badge">Talk</span>
       <span class="talk-text"><em>“Improving Detector Systematic Uncertainties Through Data-Driven Machine Learning,”</em> Neutrino Physics and Machine Learning — June 15, 2026</span>
@@ -566,6 +596,19 @@ ul.bul>li::marker{color:var(--accent);}
   </div>
 </section>
 
+<!-- ===== FULL PUBLICATION LIST ===== -->
+<!-- Populated at load time from the InspireHEP API (same query as the site's
+     publication widget in script.js). -->
+<section class="card">
+  <div class="card-head">
+    <span class="card-title">Extended Publications List</span>
+  </div>
+  <div class="card-body">
+    <p class="pub-note" id="pub-note">Full list on <a href="https://inspirehep.net/authors/1896968" class="talk-link">InspireHEP</a>.</p>
+    <ol class="pub-list" id="pub-list"></ol>
+  </div>
+</section>
+
 </div>
 
 </td></tr></tbody>
@@ -573,5 +616,85 @@ ul.bul>li::marker{color:var(--accent);}
 </table>
 </main>
 
+
+<script>
+(function () {
+  "use strict";
+
+  const AUTHOR_RECID = 1896968;
+  const API = (
+    "https://inspirehep.net/api/literature" +
+    "?sort=mostrecent&size=250" +
+    "&fields=titles,publication_info,arxiv_eprints,earliest_date,document_type,thesis_info" +
+    "&q=" + encodeURIComponent("authors.recid:" + AUTHOR_RECID)
+  );
+  const MONTHS = ["Jan","Feb","Mar","Apr","May","Jun","Jul","Aug","Sep","Oct","Nov","Dec"];
+
+  const list = document.getElementById("pub-list");
+  const note = document.getElementById("pub-note");
+
+  function escapeHtml(s) {
+    return String(s == null ? "" : s)
+      .replace(/&/g, "&amp;").replace(/</g, "&lt;").replace(/>/g, "&gt;")
+      .replace(/"/g, "&quot;").replace(/'/g, "&#39;");
+  }
+
+  // Inspire titles carry inline TeX ($\nu_e$, $ν_μ$); render the simple cases.
+  function texTitle(t) {
+    return escapeHtml(t).replace(/\$([^$]*)\$/g, (_, math) => math
+      .replace(/\\left\s*(&lt;|\\langle)/g, "⟨").replace(/\\right\s*(&gt;|\\rangle)/g, "⟩")
+      .replace(/\\nu/g, "ν").replace(/\\mu/g, "μ").replace(/\\bar\{?(\S)\}?/g, "$1̄")
+      .replace(/_\{([^}]*)\}/g, "<sub>$1</sub>").replace(/_(\S)/g, "<sub>$1</sub>")
+      .replace(/\^\{([^}]*)\}/g, "<sup>$1</sup>").replace(/\^(\S)/g, "<sup>$1</sup>")
+      .replace(/[{}\\]/g, ""));
+  }
+
+  function normalize(rec) {
+    const m = rec.metadata || {};
+    const title = m.titles && m.titles[0] && m.titles[0].title;
+    const pi = (m.publication_info || []).find(p => p.journal_title);
+    const arxiv = m.arxiv_eprints && m.arxiv_eprints[0] && m.arxiv_eprints[0].value;
+    const isThesis = (m.document_type || []).includes("thesis");
+
+    let journal, date;
+    if (pi) {
+      // "Phys.Rev.D" -> "Phys. Rev. D"
+      journal = [pi.journal_title.replace(/\.(?=\S)/g, ". "), pi.journal_volume,
+                 pi.artid || pi.page_start].filter(Boolean).join(" ");
+      date = pi.year ? String(pi.year) : "";
+    } else {
+      journal = isThesis ? "PhD Thesis" : (arxiv ? "arXiv:" + arxiv : "Preprint");
+    }
+    if (!date && m.earliest_date) {
+      const [y, mo] = m.earliest_date.split("-");
+      date = mo ? MONTHS[+mo - 1] + " " + y : y;
+    }
+    // Order by journal year when published, else by first appearance.
+    const sortKey = (pi && pi.year ? pi.year + "-99" : "") || m.earliest_date || "";
+    return { title, journal, date, sortKey, earliest: m.earliest_date || "" };
+  }
+
+  fetch(API, { headers: { "Accept": "application/json" } })
+    .then(res => {
+      if (!res.ok) throw new Error("HTTP " + res.status);
+      return res.json();
+    })
+    .then(data => {
+      const papers = ((data.hits && data.hits.hits) || []).map(normalize).filter(p => p.title)
+        .sort((a, b) => b.sortKey.slice(0, 4).localeCompare(a.sortKey.slice(0, 4)) ||
+                        b.earliest.localeCompare(a.earliest));
+      if (!papers.length) return;
+      list.innerHTML = papers.map(p =>
+        "<li><span><em>" + texTitle(p.title) + "</em>, " +
+        '<span class="pub-journal">' + escapeHtml(p.journal) + "</span></span>" +
+        '<span class="date">' + escapeHtml(p.date) + "</span></li>"
+      ).join("");
+      note.remove();
+    })
+    .catch(err => {
+      console.error("[publications] fetch failed:", err);
+    });
+})();
+</script>
 
 </body></html>
