@@ -651,7 +651,12 @@ ul.bul>li::marker{color:var(--accent);}
 
   function normalize(rec) {
     const m = rec.metadata || {};
-    const title = m.titles && m.titles[0] && m.titles[0].title;
+    // Publisher (e.g. APS) titles can carry raw MathML; prefer a TeX/plain
+    // title (usually the arXiv one) and strip markup if MathML is all we have
+    const titles = m.titles || [];
+    const t0 = titles.find(t => t.title && !/<math/i.test(t.title)) || titles[0];
+    const title = t0 && t0.title && t0.title.replace(/<math[\s\S]*?<\/math>/gi,
+      mm => mm.replace(/<[^>]+>/g, "")).trim();
     const pi = (m.publication_info || []).find(p => p.journal_title);
     const arxiv = m.arxiv_eprints && m.arxiv_eprints[0] && m.arxiv_eprints[0].value;
     const isThesis = (m.document_type || []).includes("thesis");

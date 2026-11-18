@@ -72,7 +72,13 @@
    */
   function normalize(rec) {
     const m = (rec && rec.metadata) || {};
-    const title = (m.titles && m.titles[0] && m.titles[0].title) || "Untitled";
+    // Publisher (e.g. APS) titles can carry raw MathML; prefer another title
+    // (usually arXiv's TeX one), and strip markup if MathML is all we have
+    const titles = m.titles || [];
+    const t0 = titles.find(t => t.title && !/<math/i.test(t.title)) || titles[0];
+    const title = ((t0 && t0.title) || "Untitled")
+      .replace(/<math[\s\S]*?<\/math>/gi, mm => mm.replace(/<[^>]+>/g, ""))
+      .replace(/\$([^$]*)\$/g, "$1").trim();
 
     // Authors or collaboration
     let authorLine = "";
